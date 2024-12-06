@@ -6,6 +6,6 @@ import java.util.Scanner;
 public class Login {
 
 		public static void main(String[] args) {
-			new AddNewEmployee().oper(new Database(), new Scanner(System.in));
+			new UpdateEmployee().oper(new Database(), new Scanner(System.in));
 		}
 }

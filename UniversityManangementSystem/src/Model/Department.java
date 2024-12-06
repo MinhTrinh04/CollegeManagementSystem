@@ -1,5 +1,8 @@
 package Model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Department {
 	private int ID;
 	private String title;
@@ -9,8 +12,16 @@ public class Department {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Department (int ID,Database database) {
-	
+	public Department(int ID, Database database) {
+		try {
+			String select = "SELECT * FROM `departments` WHERE `ID` = "+ID+" ;";
+			ResultSet rs = database.getStatement().executeQuery(select);
+			rs.next();
+			setID(rs.getInt("ID"));
+			SetTitle(rs.getString("Name"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	public int getID() {
 		return ID;

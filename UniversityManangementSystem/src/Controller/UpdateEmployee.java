@@ -87,19 +87,20 @@ public class UpdateEmployee implements Operation {
 			
 			
 		}
+		employee.update(database);
 		
 		
 			
 			
 			
-		}
-		
-		
-		
-		
-		
-		
-		
 	}
+		
+		
+		
+		
+		
+		
+		
+}
 	
 
