@@ -11,6 +11,9 @@ public class Department {
 	public Department() {
 		// TODO Auto-generated constructor stub
 	}
+	public Department(int ID) {
+		this.ID = ID;
+	}
 	
 	public Department(int ID, Database database) {
 		try {

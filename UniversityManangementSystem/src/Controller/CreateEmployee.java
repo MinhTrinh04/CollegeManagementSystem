@@ -9,7 +9,7 @@ import Model.Department;
 import Model.Employee;
 import Model.Operation;
 
-public class AddNewEmployee implements Operation{
+public class CreateEmployee implements Operation{
 
 	@Override
 		public void oper(Database database, Scanner scanner) {
