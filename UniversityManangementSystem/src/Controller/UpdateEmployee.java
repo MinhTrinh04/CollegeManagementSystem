@@ -80,7 +80,7 @@ public class UpdateEmployee implements Operation {
 		int deptID = scanner.nextInt();
 		if(deptID != -1) {
 			while (deptID == -2 ) {
-				new ShowAllDepartments().oper(database, scanner);
+				new ReadDepartments().oper(database, scanner);
 				deptID = scanner.nextInt();
 			}
 			employee.SetDepartment(new Department(deptID, database));

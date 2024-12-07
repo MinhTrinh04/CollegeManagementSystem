@@ -40,4 +40,44 @@ public class Department {
 	public void SetTitle(String name) {
 		this.title = name;
 	}
+	
+	public void print() {
+		System.out.println("ID:\t"+getID());
+		System.out.println("Name:\t"+GetTitle());
+		System.out.println("____________________________\n");
+	}
+	
+	public void create(Database database) {
+		String insert = "INSERT INTO `departments`(`ID`, `Name`) "
+				+ "VALUES ('"+getID()+"','"+GetTitle()+"');";
+		try {
+			database.getStatement().execute(insert);
+			System.out.println("Department created successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void update(Database database) {
+		String update = "UPDATE `departments` SET `Name`='"+GetTitle()+"' "
+				+ "WHERE `ID` = "+getID()+" ;";
+		try {
+			database.getStatement().execute(update);
+			System.out.println("Department updated successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void delete(Database database) {
+		try {
+			String delete = "DELETE FROM `departments` WHERE `ID` = "+ID+" ;";
+			database.getStatement().execute(delete);
+			System.out.println("Department deleted successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 }

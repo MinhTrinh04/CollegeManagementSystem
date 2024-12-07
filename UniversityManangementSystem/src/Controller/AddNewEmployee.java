@@ -1,5 +1,6 @@
 package Controller;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class AddNewEmployee implements Operation{
 		System.out.println("Enter Department ID (-1 to show all departments):");
 		int deptID = scanner.nextInt();
 		while (deptID<0) {
-			new ShowAllDepartments().oper(database, scanner);
+			new ReadDepartments().oper(database, scanner);
 			System.out.println("Enter Department ID (-1 to show all departments):");
 			deptID = scanner.nextInt();
 		}
