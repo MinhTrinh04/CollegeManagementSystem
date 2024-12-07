@@ -157,7 +157,7 @@ public class Employee {
 		System.out.println("Phone Number:\t"+getPhoneNum());
 		System.out.println("Birth Date:\t"+GetBirth());
 		System.out.println("Salary:\t\t"+GetSalary());
-		System.out.println("Department:\t"+GetDepartment().GetTitle());
+		System.out.println("Department:\t"+GetDepartment().GetName());
 		System.out.println("_________________________________________\n");
 	}
 	

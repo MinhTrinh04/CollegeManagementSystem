@@ -11,9 +11,8 @@ public class CreateDepartment implements Operation {
 
 	@Override
 	public void oper(Database database, Scanner scanner) {
-
-		scanner.nextLine();
 		System.out.println("Enter Department Name:");
+		
 		String name = scanner.nextLine();
 		
 		int ID = 0;
@@ -24,7 +23,7 @@ public class CreateDepartment implements Operation {
 		
 		Department department = new Department();
 		department.setID(ID);
-		department.SetTitle(name);
+		department.SetName(name);
 		department.create(database);
 
 	}

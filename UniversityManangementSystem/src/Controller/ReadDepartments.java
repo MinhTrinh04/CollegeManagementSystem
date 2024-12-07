@@ -27,7 +27,7 @@ public class ReadDepartments implements Operation {
 			while (rs.next()) {
 				Department d = new Department();
 				d.setID(rs.getInt("ID"));
-				d.SetTitle(rs.getString("Name"));
+				d.SetName(rs.getString("Name"));
 				departments.add(d);
 			}
 		} catch (SQLException e) {

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class Department {
 	private int ID;
-	private String title;
+	private String Name;
 
 	
 	public Department() {
@@ -18,7 +18,7 @@ public class Department {
 			ResultSet rs = database.getStatement().executeQuery(select);
 			if (rs.next()) { 
 	            setID(rs.getInt("ID"));
-	            SetTitle(rs.getString("Name"));
+	            SetName(rs.getString("Name"));
 	        } 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,24 +32,24 @@ public class Department {
 		this.ID = ID;
 	}
 	
-	public String GetTitle() {
-		return title;
+	public String GetName() {
+		return Name;
 	}
 	
 	
-	public void SetTitle(String name) {
-		this.title = name;
+	public void SetName(String name) {
+		this.Name = name;
 	}
 	
 	public void print() {
 		System.out.println("ID:\t"+getID());
-		System.out.println("Name:\t"+GetTitle());
+		System.out.println("Name:\t"+GetName());
 		System.out.println("____________________________\n");
 	}
 	
 	public void create(Database database) {
 		String insert = "INSERT INTO `departments`(`ID`, `Name`) "
-				+ "VALUES ('"+getID()+"','"+GetTitle()+"');";
+				+ "VALUES ('"+getID()+"','"+GetName()+"');";
 		try {
 			database.getStatement().execute(insert);
 			System.out.println("Department created successfully");
@@ -59,7 +59,7 @@ public class Department {
 	}
 	
 	public void update(Database database) {
-		String update = "UPDATE `departments` SET `Name`='"+GetTitle()+"' "
+		String update = "UPDATE `departments` SET `Name`='"+GetName()+"' "
 				+ "WHERE `ID` = "+getID()+" ;";
 		try {
 			database.getStatement().execute(update);

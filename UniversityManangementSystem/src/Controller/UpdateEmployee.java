@@ -75,7 +75,7 @@ public class UpdateEmployee implements Operation {
 		}
 		
 		
-		System.out.println("Enter Department (-1 to keep " + employee.GetDepartment().GetTitle() + ")\n"
+		System.out.println("Enter Department (-1 to keep " + employee.GetDepartment().GetName() + ")\n"
 				+ "(-2 to show all departments):");
 		int deptID = scanner.nextInt();
 		if(deptID != -1) {
