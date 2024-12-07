@@ -17,7 +17,7 @@ public class UpdateEmployee implements Operation {
 			int userID = scanner.nextInt();
 			while (userID <0) {
 				System.out.println("Enter User ID (-1 to show all employees):");
-				new ShowAllEmployees().oper(database, scanner);
+				new ReadEmployees().oper(database, scanner);
 				userID = scanner.nextInt();
 			}
 		
@@ -84,11 +84,9 @@ public class UpdateEmployee implements Operation {
 				deptID = scanner.nextInt();
 			}
 			employee.SetDepartment(new Department(deptID, database));
-			
-			
 		}
 		employee.update(database);
-		
+			
 		
 			
 			

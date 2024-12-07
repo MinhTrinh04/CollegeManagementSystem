@@ -16,9 +16,10 @@ public class Department {
 		try {
 			String select = "SELECT * FROM `departments` WHERE `ID` = "+ID+" ;";
 			ResultSet rs = database.getStatement().executeQuery(select);
-			rs.next();
-			setID(rs.getInt("ID"));
-			SetTitle(rs.getString("Name"));
+			if (rs.next()) { 
+	            setID(rs.getInt("ID"));
+	            SetTitle(rs.getString("Name"));
+	        } 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

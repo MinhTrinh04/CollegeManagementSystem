@@ -24,45 +24,23 @@ public class Employee {
 					+ "`PhoneNumber`, `BirthDate`, `Salary`, `Department`, `Password`"
 					+ " FROM `employees` WHERE `ID` = "+getID()+" ;";
 			ResultSet rs = database.getStatement().executeQuery(select);
-			rs.next();
-			SetFirstName(rs.getString("FirstName"));
-			SetLastName(rs.getString("LastName"));
-			SetEmail(rs.getString("Email"));
-			SetPhoneNum(rs.getString("PhoneNumber"));
-			SetBirth(rs.getString("BirthDate"));
-			SetSalary(rs.getDouble("Salary"));
-			SetPassword(rs.getString("Password"));
-			int deptID = rs.getInt("Department");
-			SetDepartment(new Department(deptID, database));
+			if (rs.next()) {
+				SetFirstName(rs.getString("FirstName"));
+				SetLastName(rs.getString("LastName"));
+				SetEmail(rs.getString("Email"));
+				SetPhoneNum(rs.getString("PhoneNumber"));
+				SetBirth(rs.getString("BirthDate"));
+				SetSalary(rs.getDouble("Salary"));
+				SetPassword(rs.getString("Password"));
+				int deptID = rs.getInt("Department");
+				SetDepartment(new Department(deptID, database));
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-//	public Employee(int ID, Database database) {
-//		try(Statement statement = database.createStatement()) {
-//			setID(ID);
-//			String select = "SELECT `ID`, `FirstName`, `LastName`, `Email`, "
-//					+ "`PhoneNumber`, `BirthDate`, `Salary`, `Department`, `Password`"
-//					+ " FROM `employees` WHERE `ID` = "+getID()+" ;";
-//			ResultSet rs = statement.executeQuery(select);
-//			rs.next();
-//			SetFirstName(rs.getString("FirstName"));
-//			SetLastName(rs.getString("LastName"));
-//			SetEmail(rs.getString("Email"));
-//			SetPhoneNum(rs.getString("PhoneNumber"));
-//			SetBirth(rs.getString("BirthDate"));
-//			SetSalary(rs.getDouble("Salary"));
-//			SetPassword(rs.getString("Password"));
-//			int deptID = rs.getInt("Department");
-//			SetDepartment(new Department(deptID, database));
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//	}
-
-	
+		
 	public int getID() {
 		return ID;
 	}
