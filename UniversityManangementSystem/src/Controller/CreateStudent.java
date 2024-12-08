@@ -11,7 +11,7 @@ import Model.Student;
 public class CreateStudent implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		
 		Student s = new Student();
 		
@@ -40,7 +40,7 @@ public class CreateStudent implements Operation {
 		System.out.println("Enter Class ID (-1 to show all classes):");
 		int classID = scanner.nextInt();
 		while (classID<0) {
-			new ReadClasses().oper(database, scanner);
+			new ReadClasses().oper(database, scanner,id);
 			System.out.println("Enter Class ID (-1 to show all classes):");
 			classID = scanner.nextInt();
 		}

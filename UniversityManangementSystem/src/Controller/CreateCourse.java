@@ -13,7 +13,7 @@ import Model.Operation;
 public class CreateCourse implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		
 		Course c = new Course();
 		
@@ -24,13 +24,15 @@ public class CreateCourse implements Operation {
 		}
 		c.setID(ID);
 		
+		scanner.nextLine();
+		
 		System.out.println("Enter Course Name:");
 		c.setName(scanner.nextLine());
 		
 		System.out.println("Enter Class ID (-1 to show all classes):");
 		int classID = scanner.nextInt();
 		while (classID<0) {
-			new ReadClasses().oper(database, scanner);
+			new ReadClasses().oper(database, scanner,id);
 			System.out.println("Enter Class ID (-1 to show all classes):");
 			classID = scanner.nextInt();
 		}
@@ -46,7 +48,7 @@ public class CreateCourse implements Operation {
 		System.out.println("Enter Prof ID (-1 to show all employees):");
 		int employeeID = scanner.nextInt();
 		while (employeeID<0) {
-			new ReadEmployees().oper(database, scanner);
+			new ReadEmployees().oper(database, scanner,id);
 			System.out.println("Enter Prof ID (-1 to show all employees):");
 			employeeID = scanner.nextInt();
 		}
@@ -55,7 +57,7 @@ public class CreateCourse implements Operation {
 		System.out.println("Enter Department ID (-1 to show all departments):");
 		int deptID = scanner.nextInt();
 		while (deptID<0) {
-			new ReadDepartments().oper(database, scanner);
+			new ReadDepartments().oper(database, scanner,id);
 			System.out.println("Enter Department ID (-1 to show all departments):");
 			deptID = scanner.nextInt();
 		}

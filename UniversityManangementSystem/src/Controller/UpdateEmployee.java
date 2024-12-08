@@ -11,13 +11,13 @@ public class UpdateEmployee implements Operation {
 
 		
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		
 			System.out.println("Enter User ID (-1 to show all employees):");
 			int userID = scanner.nextInt();
 			while (userID <0) {
 				System.out.println("Enter User ID (-1 to show all employees):");
-				new ReadEmployees().oper(database, scanner);
+				new ReadEmployees().oper(database, scanner,id);
 				userID = scanner.nextInt();
 			}
 		
@@ -80,7 +80,7 @@ public class UpdateEmployee implements Operation {
 		int deptID = scanner.nextInt();
 		if(deptID != -1) {
 			while (deptID == -2 ) {
-				new ReadDepartments().oper(database, scanner);
+				new ReadDepartments().oper(database, scanner,id);
 				deptID = scanner.nextInt();
 			}
 			employee.SetDepartment(new Department(deptID, database));

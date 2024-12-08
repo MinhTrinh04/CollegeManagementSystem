@@ -10,12 +10,12 @@ import Model.Student;
 public class UpdateStudent implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		
 		System.out.println("Enter ID (-1 to show all students):");
 		int ID = scanner.nextInt();
 		while (ID<0) {
-			new ReadStudents().oper(database, scanner);
+			new ReadStudents().oper(database, scanner,id);
 			System.out.println("Enter ID (-1 to show all students):");
 			ID = scanner.nextInt();
 		}
@@ -47,7 +47,7 @@ public class UpdateStudent implements Operation {
 		int classID = scanner.nextInt();
 		if (classID!=-1) {
 			while (classID==-2) {
-				new ReadClasses().oper(database, scanner);
+				new ReadClasses().oper(database, scanner, id);
 				System.out.println("Enter Class ID (-2 to show all classes):");
 				classID = scanner.nextInt();
 			}

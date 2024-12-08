@@ -13,7 +13,7 @@ import Model.Operation;
 public class ReadEmployees implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		
 		ArrayList<Employee> employees = getAllEmployees(database);
 		for (Employee e : employees) {

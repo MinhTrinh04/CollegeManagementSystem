@@ -12,7 +12,7 @@ import Model.Operation;
 public class CreateEmployee implements Operation{
 
 	@Override
-		public void oper(Database database, Scanner scanner) {
+		public void oper(Database database, Scanner scanner,int id) {
 		
 		Employee e = new Employee();
 		
@@ -31,7 +31,7 @@ public class CreateEmployee implements Operation{
 		System.out.println("Enter Department ID (-1 to show all departments):");
 		int deptID = scanner.nextInt();
 		while (deptID<0) {
-			new ReadDepartments().oper(database, scanner);
+			new ReadDepartments().oper(database, scanner,id);
 			System.out.println("Enter Department ID (-1 to show all departments):");
 			deptID = scanner.nextInt();
 		}

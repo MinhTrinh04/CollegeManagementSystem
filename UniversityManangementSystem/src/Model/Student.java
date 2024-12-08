@@ -2,6 +2,7 @@ package Model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Student {
 	private int ID;
@@ -152,4 +153,27 @@ public class Student {
 		}
 	}
 	
+	private Operation[] operations = new Operation[] {
+//			new RegisterCourse(),
+//			new ReadStudentData(),
+//			new ReadAvailableCourses(),
+//			new ReadStudentGrades(),
+//			new UpdateStudentPassword()
+	};
+	
+	
+	public void showList(Database database, Scanner scanner) {
+		System.out.println("\n_______________________");
+		System.out.println("01. Register Courses");
+		System.out.println("02. Show my Data");
+		System.out.println("03. Show Available Courses");
+		System.out.println("04. Show my Grades");
+		System.out.println("05. Change Password");
+		System.out.println("_______________________\n");
+		
+		int selected = scanner.nextInt();
+		operations[selected-1].oper(database, scanner, getID());
+
+		showList(database, scanner);
+	}
 }

@@ -12,7 +12,7 @@ import Model.Operation;
 public class ReadDepartments implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner) {
+	public void oper(Database database, Scanner scanner,int id) {
 		ArrayList<Department> departments = getAllDepartments(database);
 		for (Department d : departments) {
 			d.print();
