@@ -15,7 +15,7 @@ import Model.Operation;
 public class ReadCourses implements Operation {
 
 	@Override
-	public void oper(Database database, Scanner scanner,int id) {
+	public void oper(Database database, Scanner scanner, int id) {
 		for (Course c : getAllCourses(database)) {
 			c.print();
 		}

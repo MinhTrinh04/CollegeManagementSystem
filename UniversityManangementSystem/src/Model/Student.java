@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import Controller.RegisterCourse;
+
 public class Student {
 	private int ID;
 	private String firstName;
@@ -153,8 +155,20 @@ public class Student {
 		}
 	}
 	
+	public void registerCourse(Database database, int courseID) {
+		String insert = "INSERT INTO `course "+courseID+"`(`Student`) "
+				+ "VALUES ('"+getID()+"','"+GetFirstName()+"', '"+GetLastName()+"');";
+		try {
+			database.getStatement().execute(insert);
+			System.out.println("Course registered successfully");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	private Operation[] operations = new Operation[] {
-//			new RegisterCourse(),
+			new RegisterCourse(),
 //			new ReadStudentData(),
 //			new ReadAvailableCourses(),
 //			new ReadStudentGrades(),

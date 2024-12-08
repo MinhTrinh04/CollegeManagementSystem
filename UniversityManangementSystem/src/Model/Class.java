@@ -17,7 +17,7 @@ public class Class {
 		String select = "SELECT * FROM `classes` WHERE `ID` = "+ID+" ;";
 		try {
 			ResultSet rs = database.getStatement().executeQuery(select);
-			rs.next();
+			if (rs.next())
 			SetName(rs.getString("Name"));
 		} catch (SQLException e) {
 			e.printStackTrace();
