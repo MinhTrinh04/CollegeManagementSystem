@@ -3,6 +3,8 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import Controller.AddCourseGrades;
 //
 //import Controller.AddCourseGrades;
 import Controller.CreateClass;
@@ -221,7 +223,7 @@ public class Employee {
 			new ReadCourses(),
 			new ReadEmployeeCourses(),
 			new ReadCourseStudents(),
-//			new AddCourseGrades(),
+			new AddCourseGrades(),
 //			new ReadCourseGrades(),
 //			new UpdateCourseGrade(),
 //			new UpdateCourseMaxGrade(),

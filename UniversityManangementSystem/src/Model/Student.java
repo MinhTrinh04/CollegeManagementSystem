@@ -173,7 +173,7 @@ public class Student {
 
 	    } catch (SQLException e) {
 	        e.printStackTrace();
-	        // Handle the exception appropriately, e.g., log the error or show an error message
+	    
 	    }
 	}
 	
