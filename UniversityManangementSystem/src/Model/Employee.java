@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import Controller.AddCourseGrades;
-//
-//import Controller.AddCourseGrades;
 import Controller.CreateClass;
 import Controller.CreateCourse;
 import Controller.CreateDepartment;
@@ -14,28 +12,26 @@ import Controller.CreateEmployee;
 import Controller.CreateStudent;
 import Controller.DeleteClass;
 import Controller.DeleteCourse;
-//import Controller.DeleteCourseGrades;
+import Controller.DeleteCourseGrades;
 import Controller.DeleteDepartment;
 import Controller.DeleteEmployee;
-//import Controller.DeleteSpecCourseGrade;
+import Controller.DeleteSpecCourseGrade;
 import Controller.DeleteStudent;
 import Controller.ReadClasses;
 import Controller.ReadCourseStudents;
-//import Controller.ReadCourseGrades;
-//import Controller.ReadCourseStudents;
+import Controller.ReadCourseGrades;
 import Controller.ReadCourses;
 import Controller.ReadDepartments;
 import Controller.ReadEmployeeCourses;
-//import Controller.ReadEmployeeCourses;
 import Controller.ReadEmployees;
 import Controller.ReadStudents;
 import Controller.UpdateClass;
 import Controller.UpdateCourse;
-//import Controller.UpdateCourseGrade;
-//import Controller.UpdateCourseMaxGrade;
+import Controller.UpdateCourseGrade;
+import Controller.UpdateCourseMaxGrade;
 import Controller.UpdateDepartment;
 import Controller.UpdateEmployee;
-//import Controller.UpdateEmployeePassword;
+import Controller.UpdateEmployeePassword;
 import Controller.UpdateStudent;
 
 public class Employee {
@@ -214,7 +210,7 @@ public class Employee {
 			new ReadStudents(),
 			new UpdateStudent(),
 			new DeleteStudent(),
-//			new UpdateEmployeePassword()
+			new UpdateEmployeePassword()
 	};
 	
 	private Operation[] profOperations = new Operation[] {
@@ -224,12 +220,12 @@ public class Employee {
 			new ReadEmployeeCourses(),
 			new ReadCourseStudents(),
 			new AddCourseGrades(),
-//			new ReadCourseGrades(),
-//			new UpdateCourseGrade(),
-//			new UpdateCourseMaxGrade(),
-//			new DeleteCourseGrades(),
-//			new DeleteSpecCourseGrade(),
-//			new UpdateEmployeePassword()
+			new ReadCourseGrades(),
+			new UpdateCourseGrade(),
+			new UpdateCourseMaxGrade(),
+			new DeleteCourseGrades(),
+			new DeleteSpecCourseGrade(),
+			new UpdateEmployeePassword()
 	};
 	
 	public void showList(Database database, Scanner scanner) {

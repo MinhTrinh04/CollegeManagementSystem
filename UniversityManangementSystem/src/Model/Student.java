@@ -4,7 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import Controller.ReadAvailableCourses;
+import Controller.ReadStudentData;
+import Controller.ReadStudentGrades;
 import Controller.RegisterCourse;
+import Controller.UpdateStudentPassword;
 
 public class Student {
 	private int ID;
@@ -180,10 +184,10 @@ public class Student {
 	
 	private Operation[] operations = new Operation[] {
 			new RegisterCourse(),
-//			new ReadStudentData(),
-//			new ReadAvailableCourses(),
-//			new ReadStudentGrades(),
-//			new UpdateStudentPassword()
+			new ReadStudentData(),
+			new ReadAvailableCourses(),
+			new ReadStudentGrades(),
+			new UpdateStudentPassword()
 	};
 	
 	
