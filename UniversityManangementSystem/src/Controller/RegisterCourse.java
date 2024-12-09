@@ -21,10 +21,11 @@ public class RegisterCourse implements Operation {
 		}
 		
 		Course selectedCourse = new Course(courseID, database);
-		if (selectedCourse.getStudents().size()>=selectedCourse.getLimit()) {
-			System.out.println("This course is full.\nTry again later");
-		} else if (selectedCourse.getStudentsIDs().contains(student.getID())) {
+		if (selectedCourse.getStudentsIDs().contains(student.getID())) {
+			
 			System.out.println("You have already registered this course before");
+		} else if (selectedCourse.getStudents().size()>=selectedCourse.getLimit()) {
+			System.out.println("This course is full.\nTry again later");
 		} else {
 			student.registerCourse(database, courseID);
 		}

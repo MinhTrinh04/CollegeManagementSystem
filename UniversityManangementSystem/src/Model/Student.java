@@ -155,15 +155,37 @@ public class Student {
 		}
 	}
 	
+//	public void registerCourse(Database database, int courseID) {
+//		String insert = "INSERT INTO `enrollments`(`Student`) "
+//				+ "VALUES ('"+getID()+"','"+GetFirstName()+"', '"+GetLastName()+"');";
+//		try {
+//			database.getStatement().execute(insert);
+//			System.out.println("Course registered successfully");
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	
+	
 	public void registerCourse(Database database, int courseID) {
-		String insert = "INSERT INTO `course "+courseID+"`(`Student`) "
-				+ "VALUES ('"+getID()+"','"+GetFirstName()+"', '"+GetLastName()+"');";
-		try {
-			database.getStatement().execute(insert);
-			System.out.println("Course registered successfully");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	    try {
+	        // First, retrieve the course, student, and class information
+	        Course course = new Course(courseID, database);
+	        Student student = new Student(getID(), database); // Assuming getID() returns the student's ID
+	        Class classObj = course.getCurrentClass(); // Assuming getCurrentClass() returns the Class object
+
+	        // Build the INSERT statement (like your example, but with all required columns)
+	        String insert = "INSERT INTO `enrollments`(`Course_id`, `Course_name`, `Student_id`, `Student_name`, `Class_id`, `Class_name`) " +
+	                "VALUES ('" + course.getID() + "', '" + course.getName() + "', '" + student.getID() + "', '" + 
+	                student.GetFirstName() + " " + student.GetLastName() + "', '" + classObj.getID() + "', '" + classObj.GetName() + "')";
+
+	        database.getStatement().execute(insert);
+	        System.out.println("Course registered successfully");
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        // Handle the exception appropriately, e.g., log the error or show an error message
+	    }
 	}
 	
 	

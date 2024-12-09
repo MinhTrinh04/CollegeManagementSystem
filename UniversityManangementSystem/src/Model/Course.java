@@ -26,7 +26,7 @@ public class Course {
 		studentsIDs = new ArrayList<>();
 		setID(ID);
 		String select1 = "SELECT * FROM `courses` WHERE `ID` = "+ID+" ;";
-		String select2 = "SELECT * FROM `course "+ID+"`;";
+		String select2 = "SELECT * FROM `enrollments` WHERE `Course_id` = "+ID+" ;";
 		try {
 			ResultSet rs1 = database.getStatement().executeQuery(select1);
 			rs1.next();
@@ -43,7 +43,7 @@ public class Course {
 			
 			ResultSet rs2 = database.getStatement().executeQuery(select2);
 			while (rs2.next()) {
-				studentsIDs.add(rs2.getInt("Student"));
+				studentsIDs.add(rs2.getInt("Student_id"));
 			}
 			for (Integer i : studentsIDs) {
 				students.add(new Student(i, database));
@@ -144,10 +144,10 @@ public class Course {
 				"','"+getCurrentClass().getID()+"','"+getDescription()+"','"+
 				getLimit()+"','"+getProf().getID()+"','"+getDepartment().getID()
 				+"');";
-		String create = "CREATE TABLE `Course "+getID()+"` (Student int);";
+//		String create = "CREATE TABLE `Course "+getID()+"` (Student int);";
 		try {
 			database.getStatement().execute(insert);
-			database.getStatement().execute(create);
+//			database.getStatement().execute(create);
 			System.out.println("Course created successfully");
 		} catch (SQLException e) {
 			e.printStackTrace();
