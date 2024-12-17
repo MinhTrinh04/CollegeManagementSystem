@@ -14,7 +14,7 @@ public class UpdateStudentPassword implements Operation {
 		Student student = new Student(ID, database);
 		System.out.println("Enter old password:");
 		String oldPassword = scanner.next();
-		if (!student.getPassword().equals(oldPassword)) {
+		if (!student.GetPassword().equals(oldPassword)) {
 			System.out.println("Wrong Password.\nTry again later");
 		} else {
 			System.out.println("Enter new password:");

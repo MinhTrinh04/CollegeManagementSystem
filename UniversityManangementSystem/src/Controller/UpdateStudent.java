@@ -65,7 +65,7 @@ public class UpdateStudent implements Operation {
 				System.out.println("Confirm Password:");
 				confirmPassword = scanner.next();
 			}
-			s.setPassword(password);
+			s.SetPassword(password);
 		}
 		
 		s.update(database);

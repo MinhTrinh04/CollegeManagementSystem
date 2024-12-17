@@ -35,7 +35,7 @@ public class ReadStudents implements Operation {
 				s.SetPhoneNum(rs.getString("PhoneNumber"));
 				s.SetBirth(rs.getString("BirthDate"));
 				classes.add(rs.getInt("Class"));
-				s.setPassword(rs.getString("Password"));
+				s.SetPassword(rs.getString("Password"));
 				students.add(s);
 			}
 			
