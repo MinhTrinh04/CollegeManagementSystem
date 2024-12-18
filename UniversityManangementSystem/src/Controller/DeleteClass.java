@@ -2,9 +2,9 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Class;
-import Model.Database;
-import Model.Operation;
+import Database.Database;
+import Management.Class;
+import Management.Operation;
 
 public class DeleteClass implements Operation {
 

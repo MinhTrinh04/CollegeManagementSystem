@@ -2,10 +2,10 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Class;
-import Model.Database;
-import Model.Operation;
-import Model.Student;
+import Database.Database;
+import Management.Class;
+import Management.Operation;
+import Users.Student;
 
 public class UpdateStudent implements Operation {
 

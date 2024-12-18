@@ -4,9 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Employee;
-import Model.Student;
+import Database.Database;
+import Users.Employee;
+import Users.Student;
 
 public class Login {
 	

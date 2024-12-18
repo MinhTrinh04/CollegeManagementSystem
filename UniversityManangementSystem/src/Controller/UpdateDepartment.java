@@ -2,9 +2,9 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Department;
-import Model.Operation;
+import Database.Database;
+import Management.Department;
+import Management.Operation;
 
 public class UpdateDepartment implements Operation {
 

@@ -3,9 +3,9 @@ package Controller;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Operation;
-import Model.Student;
+import Database.Database;
+import Management.Operation;
+import Users.Student;
 
 public class UpdateStudentPassword implements Operation {
 

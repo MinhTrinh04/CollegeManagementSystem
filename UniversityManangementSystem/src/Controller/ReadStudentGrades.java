@@ -5,12 +5,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.Class;
-import Model.Course;
-import Model.Database;
-import Model.Grade;
-import Model.Operation;
-import Model.Student;
+import Database.Database;
+import Management.Class;
+import Management.Course;
+import Management.Grade;
+import Management.Operation;
+import Users.Student;
 
 public class ReadStudentGrades implements Operation {
 

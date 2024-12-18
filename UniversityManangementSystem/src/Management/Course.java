@@ -1,8 +1,12 @@
-package Model;
+package Management;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import Database.Database;
+import Users.Employee;
+import Users.Student;
 
 public class Course {
 	

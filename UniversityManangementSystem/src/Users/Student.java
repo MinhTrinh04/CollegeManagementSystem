@@ -1,4 +1,4 @@
-package Model;
+package Users;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +9,10 @@ import Controller.ReadStudentData;
 import Controller.ReadStudentGrades;
 import Controller.RegisterCourse;
 import Controller.UpdateStudentPassword;
+import Database.Database;
+import Management.Class;
+import Management.Course;
+import Management.Operation;
 
 public class Student extends User{
 //	private int ID;
@@ -17,7 +21,7 @@ public class Student extends User{
 //	private String email;
 //	private String phoneNumber;
 //	private String birthDate;
-	private Model.Class c;
+	private Management.Class c;
 //	private String password;
 	
 	public Student() {}

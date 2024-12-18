@@ -1,4 +1,4 @@
-package Model;
+package Users;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,6 +33,9 @@ import Controller.UpdateDepartment;
 import Controller.UpdateEmployee;
 import Controller.UpdateEmployeePassword;
 import Controller.UpdateStudent;
+import Database.Database;
+import Management.Department;
+import Management.Operation;
 
 public class Employee extends User {
 //	private int ID;

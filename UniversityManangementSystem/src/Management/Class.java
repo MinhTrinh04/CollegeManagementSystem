@@ -1,7 +1,9 @@
-package Model;
+package Management;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import Database.Database;
 
 public class Class {
 	private int ID;

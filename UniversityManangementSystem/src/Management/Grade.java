@@ -1,4 +1,6 @@
-package Model;
+package Management;
+
+import Users.Student;
 
 public class Grade {
 	

@@ -1,6 +1,8 @@
-package Model;
+package Management;
 
 import java.util.Scanner;
+
+import Database.Database;
 
 public interface Operation {
 	

@@ -5,9 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.Class;
-import Model.Database;
-import Model.Operation;
+import Database.Database;
+import Management.Class;
+import Management.Operation;
 
 public class ReadClasses implements Operation {
 
@@ -20,8 +20,8 @@ public class ReadClasses implements Operation {
 		
 	}
 	
-	public ArrayList<Model.Class> getAllClasses(Database database) {
-		ArrayList<Model.Class> classes = new ArrayList<>();
+	public ArrayList<Management.Class> getAllClasses(Database database) {
+		ArrayList<Management.Class> classes = new ArrayList<>();
 		String select = "SELECT * FROM `classes`;";
 		try {
 			ResultSet rs = database.getStatement().executeQuery(select);

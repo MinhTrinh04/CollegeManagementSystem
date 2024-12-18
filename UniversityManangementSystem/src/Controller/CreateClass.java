@@ -3,8 +3,8 @@ package Controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Operation;
+import Database.Database;
+import Management.Operation;
 
 public class CreateClass implements Operation {
 
@@ -14,13 +14,13 @@ public class CreateClass implements Operation {
 		System.out.println("Enter Class Name:");
 		String name = scanner.nextLine();
 		
-		ArrayList<Model.Class> classes = new ReadClasses().getAllClasses(database);
+		ArrayList<Management.Class> classes = new ReadClasses().getAllClasses(database);
 		int ID = 0;
 		if (classes.size()!=0) {
 			ID = classes.get(classes.size()-1).getID()+1;
 		}
 		
-		Model.Class c = new Model.Class();
+		Management.Class c = new Management.Class();
 		c.setID(ID);
 		c.SetName(name);
 		c.create(database);

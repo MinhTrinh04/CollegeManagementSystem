@@ -2,9 +2,9 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Operation;
-import Model.Student;
+import Database.Database;
+import Management.Operation;
+import Users.Student;
 
 public class ReadStudentData implements Operation {
 

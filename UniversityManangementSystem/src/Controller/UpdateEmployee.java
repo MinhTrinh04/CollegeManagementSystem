@@ -2,10 +2,11 @@ package Controller;
 
 
 import java.util.Scanner;
-import Model.Database;
-import Model.Department;
-import Model.Employee;
-import Model.Operation;
+
+import Database.Database;
+import Management.Department;
+import Management.Operation;
+import Users.Employee;
 
 public class UpdateEmployee implements Operation {
 

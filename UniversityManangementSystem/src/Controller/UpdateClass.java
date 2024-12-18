@@ -2,8 +2,8 @@ package Controller;
 
 import java.util.Scanner;
 
-import Model.Database;
-import Model.Operation;
+import Database.Database;
+import Management.Operation;
 
 public class UpdateClass implements Operation {
 
@@ -17,7 +17,7 @@ public class UpdateClass implements Operation {
 			ID = scanner.nextInt();
 		}
 		
-		Model.Class c = new Model.Class(ID, database);
+		Management.Class c = new Management.Class(ID, database);
 		
 		scanner.nextLine();
 		
